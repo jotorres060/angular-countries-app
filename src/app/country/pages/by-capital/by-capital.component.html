@@ -1,0 +1,18 @@
+<h2 class="animate__animated animate__fadeIn">By Capital</h2>
+<hr>
+
+<div class="row mb-3 animate__animated animate__fadeIn animate__faster">
+    <div class="col">
+        <app-country-input (onEnter)="search($event)" placeholder="Search capital"></app-country-input>
+    </div>
+</div>
+
+<div *ngIf="error" class="alert alert-primary animate__animated animate__fadeIn animate__faster">
+    Capital not found
+</div>
+
+<div *ngIf="countries.length > 0" class="row animate__animated animate__fadeIn animate__faster">
+    <div class="col">
+        <app-country-table [countries]="countries"></app-country-table>
+    </div>
+</div>
